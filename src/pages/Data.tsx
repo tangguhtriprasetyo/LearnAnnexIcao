@@ -57,7 +57,7 @@ export function DataPage() {
           <span>This deletes every answer, card schedule and exam result on this device. Export a backup first if you might want them back.</span>
           <div className="row">
             <button className="btn" onClick={() => setConfirmReset(false)}>Cancel</button>
-            <button className="btn danger" onClick={() => { replaceAll({ version: 1, attempts: [], cards: {}, exams: [], activeExam: null }); setConfirmReset(false); setMsg({ kind: 'ok', text: 'Progress reset.' }) }}>Delete progress</button>
+            <button className="btn danger" onClick={() => { replaceAll({ version: 1, attempts: [], labAttempts: [], cards: {}, exams: [], activeExam: null }); setConfirmReset(false); setMsg({ kind: 'ok', text: 'Progress reset.' }) }}>Delete progress</button>
           </div>
         </div>
       )}

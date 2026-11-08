@@ -12,7 +12,7 @@ Static site: no backend, no accounts. Progress is stored in the browser (Indexed
 | Practice | Pick topics (ATA chapter / ICAO Annex), choose all, unseen or missed questions. You get an explanation and a source citation after every answer. |
 | Flashcards | Limitations, memory items in QRH checklist format, and air law figures, scheduled with FSRS spaced repetition (92% target recall). |
 | Mock Exam | Timed with no feedback until you submit. Flag questions, use the navigator, see results by topic, review answers. Survives a page reload, but the clock keeps running. |
-| Systems Lab | Interactive 737-800 hydraulic logic: pumps, standby auto-activation, PTU, LGTU, and which users stay powered. |
+| Systems Lab | **Scenario quiz:** unlimited questions generated from the hydraulic model (random failure × phase of flight: what's lost, what still works, standby, PTU, rudder power, LOW PRESSURE lights), with the answer computed from the model and the resulting panel state shown. **Explore panel:** flip switches and watch pumps, standby auto-activation, PTU, LGTU and users react. |
 | Library | Browse and filter every item by status, so you can verify content against your manuals. |
 | Progress Data | Export, import and reset your progress. |
 
@@ -52,7 +52,7 @@ Pages serves that branch (Settings → Pages → Deploy from a branch → `gh-pa
 ```
 src/content/        questions/*.json, flashcards.json, topics.ts, schema.ts (zod)
 src/lib/            quiz.ts (selection/stats), exam.ts (build/score), srs.ts (FSRS), storage.ts, progress.tsx
-src/lab/            hydraulics.ts: pure logic model, unit-tested
+src/lab/            hydraulics.ts: pure logic model; scenarioQuiz.ts: question generator (both unit-tested)
 src/pages/          one file per section
 tests/              content.test.ts (integrity), logic.test.ts
 ```

@@ -4,15 +4,24 @@ import type { ExamResult, ExamState } from './exam'
 import type { StoredCard } from './srs'
 import { isPersistent, load, probeStorage, save } from './storage'
 
+export interface LabAttempt {
+  kind: string // scenario question kind, e.g. 'standby'
+  failure: string
+  phase: string
+  correct: boolean
+  at: number
+}
+
 export interface ProgressData {
   version: 1
   attempts: Attempt[]
+  labAttempts: LabAttempt[]
   cards: Record<string, StoredCard>
   exams: ExamResult[]
   activeExam: ExamState | null
 }
 
-const EMPTY: ProgressData = { version: 1, attempts: [], cards: {}, exams: [], activeExam: null }
+const EMPTY: ProgressData = { version: 1, attempts: [], labAttempts: [], cards: {}, exams: [], activeExam: null }
 const KEY = 'progress-v1'
 
 interface Ctx {
@@ -73,5 +82,5 @@ export function validateImport(raw: unknown): ProgressData {
   const d = raw as Partial<ProgressData>
   if (!d || d.version !== 1 || !Array.isArray(d.attempts) || typeof d.cards !== 'object' || !Array.isArray(d.exams))
     throw new Error('This file is not a DEP Prep backup (expected version 1 with attempts, cards and exams).')
-  return { ...EMPTY, ...d, activeExam: null }
+  return { ...EMPTY, ...d, labAttempts: Array.isArray(d.labAttempts) ? d.labAttempts : [], activeExam: null }
 }

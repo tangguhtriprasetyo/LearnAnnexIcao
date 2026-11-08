@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { DEFAULT_INPUTS, evaluate, SCENARIOS, type FlapPos, type HydInputs } from '../lab/hydraulics'
+import { HydStatusPanel, HydUsersTable } from '../components/HydStatus'
+import { ScenarioQuiz } from './ScenarioQuiz'
+import { DEFAULT_INPUTS, evaluate, lowPressureLights, SCENARIOS, type FlapPos, type HydInputs } from '../lab/hydraulics'
 
 function Toggle({ id, name, sub, on, onChange, lamp }: { id: string; name: string; sub?: string; on: boolean; onChange: (v: boolean) => void; lamp?: boolean }) {
   return (
@@ -15,15 +17,13 @@ function Toggle({ id, name, sub, on, onChange, lamp }: { id: string; name: strin
 export function Lab() {
   const [inp, setInp] = useState<HydInputs>(DEFAULT_INPUTS)
   const [scenario, setScenario] = useState<string>('normal')
+  const [tab, setTab] = useState<'quiz' | 'panel'>('quiz')
   const s = evaluate(inp)
   const set = <K extends keyof HydInputs>(k: K, v: HydInputs[K]) => { setInp({ ...inp, [k]: v }); setScenario('') }
   const active = SCENARIOS.find((x) => x.id === scenario)
 
-  // A pump's LOW PRESSURE light is on when that pump is not producing pressure.
-  const lowEng1 = !(inp.pumpEng1 && inp.eng1Running)
-  const lowElec2 = !(inp.pumpElec2 && inp.acPower)
-  const lowElec1 = !(inp.pumpElec1 && inp.acPower)
-  const lowEng2 = !(inp.pumpEng2 && inp.eng2Running)
+  const lights = lowPressureLights(inp)
+  const lowEng1 = lights['ENG 1'], lowElec2 = lights['ELEC 2'], lowElec1 = lights['ELEC 1'], lowEng2 = lights['ENG 2']
 
   return (
     <>
@@ -31,9 +31,18 @@ export function Lab() {
         <span className="label">Systems lab · ATA 29</span>
         <h1>Hydraulics: what still works?</h1>
         <p className="muted" style={{ maxWidth: '66ch' }}>
-          Turn pumps off, fail engines, change flaps, and watch which users lose pressure. Answer the scenario question before you look at the table. This is a simplified teaching model of the logic in FCOM 13 (no fluid quantity, leaks or pressure decay), so verify details in your FCOM.
+          Drill generated failure scenarios, or explore the panel yourself. Both use the same simplified teaching model of the logic in FCOM 13 (no fluid quantity, leaks or pressure decay), so verify details in your FCOM.
         </p>
       </section>
+
+      <div className="tabs" role="tablist">
+        <button role="tab" aria-selected={tab === 'quiz'} onClick={() => setTab('quiz')}>Scenario quiz</button>
+        <button role="tab" aria-selected={tab === 'panel'} onClick={() => setTab('panel')}>Explore panel</button>
+      </div>
+
+      {tab === 'quiz' ? (
+        <ScenarioQuiz onOpenInPanel={(i) => { setInp(i); setScenario(''); setTab('panel'); window.scrollTo(0, 0) }} />
+      ) : (<>
 
       <div className="row">
         {SCENARIOS.map((sc) => (
@@ -74,7 +83,11 @@ export function Lab() {
             <Toggle id="sw-e1run" name="Engine 1" sub="Running" on={inp.eng1Running} onChange={(v) => set('eng1Running', v)} />
             <Toggle id="sw-e2run" name="Engine 2" sub="Running" on={inp.eng2Running} onChange={(v) => set('eng2Running', v)} />
             <Toggle id="sw-ac" name="AC power" sub="To EMDPs" on={inp.acPower} onChange={(v) => set('acPower', v)} />
-            <Toggle id="sw-air" name="Airborne" sub="or >60 kt" on={inp.airborne} onChange={(v) => set('airborne', v)} />
+            <label className="sw"><span className="name">Phase</span>
+              <select id="sel-phase" className="sel" value={inp.airborne ? 'air' : inp.groundFast ? 'fast' : 'slow'}
+                onChange={(e) => { const v = e.target.value; setInp({ ...inp, airborne: v === 'air', groundFast: v === 'fast' }); setScenario('') }}>
+                <option value="slow">Ground &lt;60 kt</option><option value="fast">Ground &gt;60 kt</option><option value="air">Airborne</option>
+              </select></label>
           </div>
           <label className="sw"><span className="name">Flap lever</span>
             <select id="sel-flaps" className="sel" value={inp.flaps} onChange={(e) => set('flaps', e.target.value as FlapPos)}>
@@ -83,31 +96,11 @@ export function Lab() {
         </div>
 
         <div className="section" style={{ gap: 12, minWidth: 0 }}>
-          <div className="ovhd">
-            <div className="ovhd-title">System status</div>
-            <div className="sys-lights">
-              <div className={`syslight ${s.sysA ? 'press' : 'nopress'}`}><b>A</b>{s.sysA ? '3000 PSI' : 'NO PRESS'}</div>
-              <div className={`syslight ${s.sysB ? 'press' : 'nopress'}`}><b>B</b>{s.sysB ? '3000 PSI' : 'NO PRESS'}</div>
-              <div className={`syslight ${s.standby ? 'press' : 'idle'}`}><b>STBY</b>{s.standby ? 'RUNNING' : 'OFF'}</div>
-              <div className={`syslight ${s.ptu ? 'press' : 'idle'}`}><b>PTU</b>{s.ptu ? 'OPERATING' : 'OFF'}</div>
-            </div>
-            {s.standbyReason && <p className="mono" style={{ fontSize: '0.75rem', color: '#c9d1d8' }}>Standby: {s.standbyReason}</p>}
-          </div>
-          <div className="panel table-wrap" style={{ padding: 12 }}>
-            <table className="users">
-              <thead><tr><th>User</th><th>Powered by</th></tr></thead>
-              <tbody>
-                {s.users.map((u) => (
-                  <tr key={u.name}>
-                    <td><span className={`dot ${u.powered ? 'on' : ''}`} aria-hidden="true" />{u.name}</td>
-                    <td className="via" style={{ color: u.powered ? undefined : 'var(--bad)' }}>{u.via}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <HydStatusPanel s={s} />
+          <HydUsersTable s={s} />
         </div>
       </div>
+      </>)}
       <p className="source">Model basis: FCOM Vol 2, 13 Hydraulics. Unverified: check users and activation logic against your airline's FCOM revision.</p>
     </>
   )

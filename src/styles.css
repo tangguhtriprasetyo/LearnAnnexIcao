@@ -236,3 +236,15 @@ button, input, select { font: inherit; color: inherit; }
 .topic-picks legend { padding: 0; margin-bottom: 6px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Scenario quiz */
+.users tr.hl td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.users tr.hl td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs button { font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: 0.03em; text-transform: uppercase; background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 12px; color: var(--muted); cursor: pointer; }
+.tabs button[aria-selected='true'] { color: var(--fg); border-bottom-color: var(--accent); }
+.scenario-brief { display: flex; gap: 14px; align-items: flex-start; background: var(--panel); color: var(--panel-fg); border-radius: var(--radius); padding: 14px 16px; }
+.scenario-brief .tag { flex: none; font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; color: #f2a516; border: 1.5px solid #f2a516; padding: 3px 6px; border-radius: 2px; }
+.scenario-brief p { min-width: 0; }
+.kind-stats { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.kind-stats span { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }

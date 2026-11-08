@@ -16,7 +16,8 @@ export interface HydInputs {
   fltCtlA: 'ON' | 'OFF' | 'STBY RUD'
   fltCtlB: 'ON' | 'OFF' | 'STBY RUD'
   altFlapsArm: boolean
-  airborne: boolean // or wheel speed > 60 kt
+  airborne: boolean // weight off wheels (PTU, LGTU need this)
+  groundFast: boolean // on the ground with wheel speed > 60 kt (counts for auto standby only)
   flaps: FlapPos
 }
 
@@ -32,6 +33,7 @@ export const DEFAULT_INPUTS: HydInputs = {
   fltCtlB: 'ON',
   altFlapsArm: false,
   airborne: true,
+  groundFast: false,
   flaps: '1-10',
 }
 
@@ -60,7 +62,7 @@ export function evaluate(i: HydInputs): HydState {
   else if (i.altFlapsArm) standbyReason = 'ALTERNATE FLAPS master switch ARM'
   else if (
     flapsExtended &&
-    i.airborne &&
+    (i.airborne || i.groundFast) &&
     ((!sysA && i.fltCtlA === 'ON') || (!sysB && i.fltCtlB === 'ON'))
   )
     standbyReason = 'Automatic: A or B lost, flaps extended, airborne / >60 kt, FLT CONTROL ON'
@@ -102,6 +104,40 @@ export function evaluate(i: HydInputs): HydState {
   return { sysA, sysB, bEdpLow, standby, standbyReason, ptu, users }
 }
 
+export type PumpLight = 'ENG 1' | 'ELEC 2' | 'ELEC 1' | 'ENG 2'
+export const PUMP_LIGHTS: PumpLight[] = ['ENG 1', 'ELEC 2', 'ELEC 1', 'ENG 2']
+
+/** A pump's LOW PRESSURE light is on when that pump is not producing pressure (switch off, engine/AC lost). */
+export function lowPressureLights(i: HydInputs): Record<PumpLight, boolean> {
+  return {
+    'ENG 1': !(i.pumpEng1 && i.eng1Running),
+    'ELEC 2': !(i.pumpElec2 && i.acPower),
+    'ELEC 1': !(i.pumpElec1 && i.acPower),
+    'ENG 2': !(i.pumpEng2 && i.eng2Running),
+  }
+}
+
+/** Plain-language power sources per user, for explanations. Mirrors the `users` list in evaluate(). */
+export const USER_SOURCES: Record<string, string> = {
+  Ailerons: 'A and B; manual reversion if both lost',
+  'Elevators & feel': 'A and B; manual reversion if both lost',
+  Rudder: 'A and B; standby rudder PCU as backup; no manual reversion',
+  'Flight spoilers': 'split between A and B',
+  'Ground spoilers': 'system A only',
+  'Trailing edge flaps': 'system B; alternate electric drive as backup',
+  'LE flaps & slats': 'system B; PTU (driven by A) or standby (extend only) as backup',
+  Autoslats: 'system B; PTU (driven by A) as backup',
+  'Landing gear': 'system A; LGTU uses B for retraction if engine 1 is lost; manual extension',
+  'Nose wheel steering': 'system A; alternate from B if installed',
+  'Normal brakes': 'system B',
+  'Alternate brakes': 'system A; brake accumulator as last resort',
+  'Thrust reverser 1': 'system A; standby at a slower rate',
+  'Thrust reverser 2': 'system B; standby at a slower rate',
+  'Autopilot A': 'system A',
+  'Autopilot B': 'system B',
+  'Yaw damper': 'system B',
+}
+
 export interface Scenario {
   id: string
   title: string
@@ -114,6 +150,6 @@ export const SCENARIOS: Scenario[] = [
   { id: 'normal', title: 'Normal cruise', brief: 'All pumps on, both engines running.', inputs: {}, question: 'Which users have triple redundancy (A, B and standby)?' },
   { id: 'eng1-fail-to', title: 'Engine 1 failure after V1', brief: 'Engine 1 fails on takeoff, gear lever UP.', inputs: { eng1Running: false, flaps: '1-10' }, question: 'System A still has pressure. Which pump is keeping it up, and what happens if you also lose AC?' },
   { id: 'loss-a', title: 'Loss of system A', brief: 'Both system A pumps lost, approach configuration.', inputs: { pumpEng1: false, pumpElec2: false, flaps: '15+' }, question: 'Why does standby start automatically, and what is missing on landing roll?' },
-  { id: 'loss-b-edp', title: 'System B EDP lost, flaps 5', brief: 'ENG 2 pump off with flaps 1-10 airborne.', inputs: { pumpEng2: false, pumpElec1: false, flaps: '1-10' }, question: 'What does the PTU now power, and why only in this flap range?' },
+  { id: 'loss-b-edp', title: 'Loss of system B, flaps 5', brief: 'Both system B pumps lost, airborne with flaps 1 to 10.', inputs: { pumpEng2: false, pumpElec1: false, flaps: '1-10' }, question: 'What does the PTU now power, and why only in this flap range?' },
   { id: 'manual-rev', title: 'Loss of A and B', brief: 'Both main systems lost.', inputs: { pumpEng1: false, pumpElec2: false, pumpEng2: false, pumpElec1: false, flaps: '15+' }, question: 'Which controls are in manual reversion, and what still moves the rudder?' },
 ]
