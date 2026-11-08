@@ -42,8 +42,10 @@ npm run build        # static site -> dist/
 npm run build:single # one self-contained HTML file -> dist-single/index.html (works offline)
 ```
 
-Deploy: `.github/workflows/deploy.yml` tests, builds and publishes `dist/` to GitHub Pages on every push to `main`.
-Enable it once under **Settings → Pages → Source: GitHub Actions**.
+Live site: **https://tangguhtriprasetyo.github.io/LearnAnnexIcao/**
+
+Deploy: `.github/workflows/deploy.yml` runs the tests, builds, and force-pushes `dist/` to the `gh-pages` branch on every push to `main`.
+Pages serves that branch (Settings → Pages → Deploy from a branch → `gh-pages` / root).
 
 ## Layout
 
