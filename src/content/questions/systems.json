@@ -1,0 +1,372 @@
+[
+  {
+    "id": "sys-hyd-a-pumps",
+    "topic": "sys-hyd",
+    "stem": "Which pumps pressurise hydraulic system A?",
+    "options": [
+      "Engine 1 engine-driven pump and the electric motor-driven pump labelled ELEC 2",
+      "Engine 1 engine-driven pump and the electric motor-driven pump labelled ELEC 1",
+      "Engine 2 engine-driven pump and the electric motor-driven pump labelled ELEC 2",
+      "Engine 1 engine-driven pump only, backed up by the PTU"
+    ],
+    "answer": 0,
+    "explanation": "System A: ENG 1 EDP plus the ELEC 2 EMDP. System B: ENG 2 EDP plus the ELEC 1 EMDP. On the overhead panel the switches read ENG 1, ELEC 2, ELEC 1, ENG 2. The electric pump is crossed to the opposite engine's side, so losing one engine (with its generator) does not take out both pumps of the same system.",
+    "source": { "doc": "FCOM Vol 2", "ref": "13 Hydraulics - System Description" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-hyd-ground-spoilers",
+    "topic": "sys-hyd",
+    "stem": "Ground spoilers are powered by:",
+    "options": ["System A only", "System B only", "Systems A and B", "The standby system"],
+    "answer": 0,
+    "explanation": "Ground spoilers are on system A only. Losing system A means no ground spoilers on landing, which increases landing distance; this is why the QRH non-normal landing distance tables matter. Flight spoilers are split between A and B so that losing one system keeps symmetric roll assistance.",
+    "source": { "doc": "FCOM Vol 2", "ref": "13 Hydraulics - System Description (users)" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-hyd-ptu",
+    "topic": "sys-hyd",
+    "stem": "The power transfer unit (PTU) operates automatically when airborne, flaps are less than 15 but not up, and:",
+    "options": [
+      "System B engine-driven pump pressure drops below limits",
+      "System A engine-driven pump pressure drops below limits",
+      "Engine 1 N2 drops below limits with gear lever UP",
+      "The standby system is activated"
+    ],
+    "answer": 0,
+    "explanation": "The PTU uses system A pressure to drive a hydraulic motor-pump that supplies system B fluid volume to the leading edge flaps and slats and the autoslats. It is backup for the autoslat function when system B's EDP is lost. The landing gear transfer unit (LGTU) is the opposite case: it uses system B to raise the gear when engine 1 RPM is lost.",
+    "source": { "doc": "FCOM Vol 2", "ref": "13 Hydraulics - Power Transfer Unit" },
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "sys-hyd-standby-users",
+    "topic": "sys-hyd",
+    "stem": "Which of the following is NOT powered by the standby hydraulic system?",
+    "options": [
+      "Trailing edge flaps",
+      "Standby rudder power control unit",
+      "Leading edge flaps and slats (extension)",
+      "Thrust reversers"
+    ],
+    "answer": 0,
+    "explanation": "Standby hydraulics supply the standby rudder PCU, extension of the LE flaps and slats (full extend only), and both thrust reversers at a reduced rate. Trailing edge flaps are on system B, with an electric alternate drive (ALTERNATE FLAPS switch) as the backup.",
+    "source": { "doc": "FCOM Vol 2", "ref": "13 Hydraulics - Standby Hydraulic System" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-hyd-auto-standby",
+    "topic": "sys-hyd",
+    "stem": "Automatic standby system activation (without a crew selection) requires loss of system A or B pressure, flaps extended, FLT CONTROL switch for the failed system ON, and:",
+    "options": [
+      "Airborne or wheel speed greater than 60 kt",
+      "Airborne only",
+      "Gear down and locked",
+      "ALTERNATE FLAPS master switch ARM"
+    ],
+    "answer": 0,
+    "explanation": "Auto standby is meant to protect rudder authority during takeoff, approach and landing, when flaps are extended and the aircraft is moving fast. The force fight monitor can also trigger it if the main rudder PCU inputs disagree. Selecting FLT CONTROL A or B to STBY RUD, or ALTERNATE FLAPS to ARM, starts it manually.",
+    "source": { "doc": "FCOM Vol 2", "ref": "13 Hydraulics - Standby Hydraulic System Automatic Operation" },
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fltctl-manual-reversion",
+    "topic": "sys-fltctl",
+    "stem": "With loss of both hydraulic systems A and B, which primary flight controls can still be moved through manual reversion?",
+    "options": [
+      "Ailerons and elevators",
+      "Ailerons, elevators and rudder",
+      "Rudder only",
+      "None; standby hydraulics power all primary controls"
+    ],
+    "answer": 0,
+    "explanation": "Ailerons and elevators have manual reversion through cables and tabs, so control forces are much higher. The rudder has no manual reversion, which is why the standby rudder PCU on the standby hydraulic system exists. In manual reversion, aileron control is helped by the balance tabs.",
+    "source": { "doc": "FCOM Vol 2", "ref": "9 Flight Controls - Primary Flight Controls" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fltctl-le-devices",
+    "topic": "sys-fltctl",
+    "stem": "The leading edge devices on each wing of the 737-800 consist of:",
+    "options": [
+      "2 Krueger flaps inboard and 4 slats outboard",
+      "4 Krueger flaps and 2 slats",
+      "6 slats",
+      "3 Krueger flaps and 3 slats"
+    ],
+    "answer": 0,
+    "explanation": "Each wing has two Krueger flaps inboard of the engine and four slats outboard. Slats have extend and full extend positions, while Kruegers are simply extended or retracted. Autoslat moves the slats from extend to full extend when approaching the stall in certain flap settings.",
+    "source": { "doc": "FCOM Vol 2", "ref": "9 Flight Controls - Leading Edge Devices" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fltctl-speed-trim",
+    "topic": "sys-fltctl",
+    "stem": "The speed trim system is designed primarily to:",
+    "options": [
+      "Improve flight characteristics during low gross weight, aft CG, high thrust conditions, typically after takeoff and during go-around",
+      "Trim the stabiliser at high Mach to counter Mach tuck",
+      "Trim the aircraft during autopilot operation",
+      "Protect against stall by trimming nose down"
+    ],
+    "answer": 0,
+    "explanation": "Speed trim moves the stabiliser against speed changes in manual flight, at low weight, aft CG and high thrust, mainly after takeoff and during go-around, to improve speed stability. Mach trim is a different function that counters Mach tuck above about M0.615.",
+    "source": { "doc": "FCOM Vol 2", "ref": "9 Flight Controls - Speed Trim System" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-elec-idg-rating",
+    "topic": "sys-elec",
+    "stem": "The primary AC power sources on the 737-800 are:",
+    "options": [
+      "Two engine-driven integrated drive generators (IDGs) and an APU generator, each rated at 90 kVA",
+      "Two IDGs rated at 60 kVA and an APU generator rated at 90 kVA",
+      "Two IDGs and a RAT",
+      "Two variable-frequency starter-generators"
+    ],
+    "answer": 0,
+    "explanation": "Each engine drives one IDG. The IDG contains a constant speed drive, so it delivers 115 V AC at 400 Hz whatever the engine speed. The APU generator can power both transfer buses on the ground and in flight. There is no RAT on the 737: standby power comes from the battery through the static inverter.",
+    "source": { "doc": "FCOM Vol 2", "ref": "6 Electrical - System Description" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-elec-standby",
+    "topic": "sys-elec",
+    "stem": "With loss of all engine and APU generators in flight, the AC standby bus is powered by:",
+    "options": [
+      "The main battery through the static inverter",
+      "The ram air turbine",
+      "TR 3",
+      "The auxiliary power unit generator, which starts automatically"
+    ],
+    "answer": 0,
+    "explanation": "With the STANDBY POWER switch in AUTO and loss of normal AC, the battery powers the hot battery bus, the DC standby bus, and (through the static inverter) the AC standby bus. The main battery is sized for about 30 minutes of standby power, or 60 minutes with the optional auxiliary battery. Check your operator's configuration.",
+    "source": { "doc": "FCOM Vol 2", "ref": "6 Electrical - Standby Power System" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-elec-bus-transfer",
+    "topic": "sys-elec",
+    "stem": "With the BUS TRANSFER switch in AUTO and the left IDG lost in flight, transfer bus 1:",
+    "options": [
+      "Is automatically powered from the opposite generator source through the bus tie system",
+      "Loses power until the APU is started",
+      "Is powered by the static inverter",
+      "Loses power permanently"
+    ],
+    "answer": 0,
+    "explanation": "BUS TRANSFER AUTO lets the bus transfer relays connect a transfer bus to the opposite side's source if its own source fails, so one generator can carry both transfer buses. Galley and main bus loads may be shed automatically to protect the remaining generator. Selecting OFF isolates the sides, which some NNCs call for.",
+    "source": { "doc": "FCOM Vol 2", "ref": "6 Electrical - AC Power System, Bus Transfer" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-air-bleed-stages",
+    "topic": "sys-air",
+    "stem": "CFM56-7 engine bleed air is taken from which compressor stages?",
+    "options": ["5th and 9th stage HP compressor", "4th and 9th stage", "Fan and 5th stage", "9th stage only"],
+    "answer": 0,
+    "explanation": "Air comes from the 5th stage at higher power. At low power, the high stage valve opens to use 9th stage air so that pressure stays adequate. The PRSOV (pressure regulating and shutoff valve, opened by the BLEED switch) regulates it, and the precooler cools it using fan air.",
+    "source": { "doc": "FCOM Vol 2", "ref": "2 Air Systems - Bleed Air System" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-air-isolation",
+    "topic": "sys-air",
+    "stem": "With the ISOLATION VALVE switch in AUTO, the isolation valve is:",
+    "options": [
+      "Closed when both engine BLEED and both PACK switches are ON; open if any of those switches is OFF",
+      "Always open",
+      "Open in flight, closed on the ground",
+      "Closed unless the APU bleed valve is open"
+    ],
+    "answer": 0,
+    "explanation": "In AUTO, the valve keeps the left and right ducts separate during normal two-bleed, two-pack operation. If any engine bleed or pack switch goes OFF, it opens so that one side's air can supply the other. A common distractor: the APU bleed valve position does not command the isolation valve.",
+    "source": { "doc": "FCOM Vol 2", "ref": "2 Air Systems - Isolation Valve" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-air-cabin-warning",
+    "topic": "sys-air",
+    "stem": "The cabin altitude warning (intermittent horn plus CABIN ALTITUDE light, where installed) activates at a cabin altitude of:",
+    "options": ["8 000 ft", "10 000 ft", "12 000 ft", "14 000 ft"],
+    "answer": 1,
+    "explanation": "The warning activates at 10 000 ft cabin altitude. Passenger oxygen masks drop automatically at about 14 000 ft cabin altitude. Many 737 accidents and incidents started with the horn misread as a takeoff configuration warning, since older aircraft used the same intermittent horn. That is why later airframes added the dedicated light.",
+    "source": { "doc": "FCOM Vol 2", "ref": "2 Air Systems - Pressurization / 15 Warning Systems" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-air-single-pack",
+    "topic": "sys-air",
+    "stem": "Which statement about pack operation is correct?",
+    "options": [
+      "One pack in HIGH can maintain pressurisation and acceptable temperatures up to the maximum certified ceiling",
+      "Both packs are required above FL 250",
+      "Packs operate in HIGH only on the ground",
+      "A pack can only be supplied by its own-side engine bleed"
+    ],
+    "answer": 0,
+    "explanation": "A single pack is enough to dispatch, within MEL conditions, and to continue flight. With the isolation valve open, either bleed source can supply either pack. Packs go to high flow automatically in some single-source configurations, depending on operator options.",
+    "source": { "doc": "FCOM Vol 2", "ref": "2 Air Systems - Air Conditioning Packs" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fire-eng-bottles",
+    "topic": "sys-fire",
+    "stem": "How many fire extinguisher bottles are available for the engines, and how are they used?",
+    "options": [
+      "Two bottles; either bottle can be discharged into either engine",
+      "Two bottles; one dedicated to each engine",
+      "One bottle shared by both engines",
+      "Three bottles, including one shared with the APU"
+    ],
+    "answer": 0,
+    "explanation": "Two engine bottles. Rotating the pulled engine fire switch one way discharges one bottle, and rotating it the other way discharges the second bottle into the same engine. The APU has its own single bottle, and the cargo compartments share one bottle. Wheel wells have detection but no extinguishing.",
+    "source": { "doc": "FCOM Vol 2", "ref": "8 Fire Protection - Engine Fire Extinguishing" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fire-switch-pull",
+    "topic": "sys-fire",
+    "stem": "Pulling an engine fire switch does all of the following EXCEPT:",
+    "options": [
+      "Discharge the fire extinguisher bottle",
+      "Close the engine fuel shutoff valve",
+      "Trip the generator control relay and breaker",
+      "Close the engine bleed air valve and disable thrust reverser"
+    ],
+    "answer": 0,
+    "explanation": "Pulling the switch arms the extinguisher squibs and isolates the engine: fuel, hydraulic fluid to the EDP (with the EDP LOW PRESSURE light deactivated), bleed air, generator, and thrust reverser. Discharge only happens when the switch is rotated, which is why the memory item ends with 'rotate to the stop and hold for 1 second'.",
+    "source": { "doc": "FCOM Vol 2", "ref": "8 Fire Protection - Engine Fire Switches" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fuel-ctr-override",
+    "topic": "sys-fuel",
+    "stem": "With all fuel pumps ON and fuel in the centre tank, why does the centre tank fuel burn first?",
+    "options": [
+      "The centre tank pumps produce higher output pressure than the main tank pumps",
+      "The main tank pumps are inhibited while the centre tank has fuel",
+      "The crossfeed valve opens automatically",
+      "Gravity feed from the centre tank has priority"
+    ],
+    "answer": 0,
+    "explanation": "The centre tank pumps (override/jettison type) deliver higher pressure, so check valves let centre fuel win in the manifold. The main tank pumps run but are 'overridden'. This is why main tanks must be full when the centre tank holds more than a small quantity (see Limitations).",
+    "source": { "doc": "FCOM Vol 2", "ref": "12 Fuel - Fuel Feed" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-fuel-suction",
+    "topic": "sys-fuel",
+    "stem": "If all AC fuel pumps fail, which tanks can supply the engines by suction feed?",
+    "options": ["Main tanks 1 and 2 only", "Centre tank only", "All tanks", "None; the engines will flame out"],
+    "answer": 0,
+    "explanation": "Each main tank has a suction bypass, so the engine-driven fuel pump can draw from its own main tank. The centre tank has no suction feed, so centre fuel is unusable without its pumps. At high altitude, suction feed may cause thrust deterioration or flameout because dissolved air comes out of the fuel. The QRH addresses this by descending.",
+    "source": { "doc": "FCOM Vol 2", "ref": "12 Fuel - Suction Feed" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-gear-transfer-unit",
+    "topic": "sys-gear",
+    "stem": "The landing gear transfer unit provides system B pressure for gear retraction when:",
+    "options": [
+      "Airborne, engine 1 RPM drops below a limit, gear lever is UP, and either main gear is not up and locked",
+      "System A EMDP fails",
+      "Gear lever is DOWN and system A is lost",
+      "Airborne and flaps are less than 15"
+    ],
+    "answer": 0,
+    "explanation": "Gear retraction normally uses system A. Engine 1 drives the system A EDP, so an engine 1 failure on takeoff could leave the gear hanging just when performance is critical. The transfer unit gets the gear up using system B volume.",
+    "source": { "doc": "FCOM Vol 2", "ref": "14 Landing Gear - Landing Gear Transfer Unit" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-gear-autobrake-rto",
+    "topic": "sys-gear",
+    "stem": "With autobrake selected to RTO, maximum braking is applied automatically when thrust levers are retarded to idle at a ground speed above:",
+    "options": ["60 kt", "80 kt", "90 kt", "V1"],
+    "answer": 2,
+    "explanation": "RTO applies maximum brake pressure if thrust levers are closed above 90 kt ground speed. Below 90 kt it does not apply, and the AUTO BRAKE DISARM light illuminates. RTO arms on the ground and disarms after liftoff. Check your FCOM for configuration-specific values.",
+    "source": { "doc": "FCOM Vol 2", "ref": "14 Landing Gear - Autobrake System" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-warn-to-config",
+    "topic": "sys-warn",
+    "stem": "The takeoff configuration warning sounds when on the ground and either forward thrust lever is advanced, if any of the following is NOT in takeoff position EXCEPT:",
+    "options": [
+      "Landing lights",
+      "Trailing edge flaps",
+      "Speed brake lever",
+      "Stabiliser trim"
+    ],
+    "answer": 0,
+    "explanation": "The takeoff configuration warning covers flaps not in the takeoff range, speed brake not DOWN, stabiliser trim outside the takeoff range, parking brake set, and LE devices not configured. Lights are not part of it. Running the BEFORE TAKEOFF check correctly matters more than relying on the warning; Spanair JK5022 (MD-82) is the classic case of the warning system itself failing.",
+    "source": { "doc": "FCOM Vol 2", "ref": "15 Warning Systems - Takeoff Configuration Warning" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-antiice-icing-def",
+    "topic": "sys-antiice",
+    "stem": "In flight, icing conditions exist when:",
+    "options": [
+      "TAT is 10°C or below and visible moisture is present",
+      "SAT is 10°C or below and visible moisture is present",
+      "TAT is 0°C or below, regardless of moisture",
+      "OAT is 5°C or below with visible moisture"
+    ],
+    "answer": 0,
+    "explanation": "On the ground and for takeoff, icing conditions are OAT 10°C or below with visible moisture or contaminated surfaces. In flight, TAT 10°C or below with visible moisture. Engine anti-ice is required in icing conditions, except during climb and cruise when SAT is below -40°C.",
+    "source": { "doc": "FCOM Vol 1", "ref": "SP.16 Adverse Weather / L Limitations - Anti-Ice" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "sys-afds-dual-ap",
+    "topic": "sys-afds",
+    "stem": "When can both autopilots (A and B) be engaged together in CMD?",
+    "options": [
+      "Only with APP mode engaged, for an autoland or dual-channel approach",
+      "At any time above 400 ft AGL",
+      "Only in cruise with LNAV and VNAV",
+      "Never; only one autopilot can be in CMD"
+    ],
+    "answer": 0,
+    "explanation": "Dual-channel operation needs APP mode with both LOC and G/S armed or captured, and the second autopilot is engaged during the approach. Otherwise, engaging one autopilot in CMD disengages the other. Dual-channel gives fail-passive autoland capability and is needed for CAT II/III, depending on operator approval.",
+    "source": { "doc": "FCOM Vol 2", "ref": "4 Automatic Flight - Autopilot Engagement" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "sys-eng-apu-alt",
+    "topic": "sys-eng",
+    "stem": "What is the maximum altitude at which the APU can supply both bleed air and electrical power simultaneously?",
+    "options": ["10 000 ft", "17 000 ft", "25 000 ft", "41 000 ft"],
+    "answer": 0,
+    "explanation": "APU bleed plus electrical: up to 10 000 ft. Bleed only: up to 17 000 ft. Electrical only: up to the maximum operating altitude of 41 000 ft. Thinner air reduces the APU's capacity, so the combined load is limited lower.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - APU" },
+    "difficulty": 1,
+    "status": "draft"
+  }
+]

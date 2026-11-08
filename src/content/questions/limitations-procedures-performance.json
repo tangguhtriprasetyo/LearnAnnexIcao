@@ -1,0 +1,322 @@
+[
+  {
+    "id": "lim-vmo",
+    "topic": "lim-ops",
+    "stem": "Vmo / Mmo for the 737-800 is:",
+    "options": ["340 KIAS / M0.82", "350 KIAS / M0.84", "320 KIAS / M0.82", "340 KIAS / M0.78"],
+    "answer": 0,
+    "explanation": "Vmo/Mmo is 340 KIAS / M0.82. Do not exceed it intentionally in any regime. The turbulent air penetration speed (280 KIAS / M0.76) is separate and well below it, to keep a margin against gust loads and overspeed.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Operating Limitations" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-turb-speed",
+    "topic": "lim-ops",
+    "stem": "The recommended turbulent air penetration speed is:",
+    "options": ["280 KIAS / M0.76", "290 KIAS / M0.78", "250 KIAS / M0.74", "300 KIAS / M0.78"],
+    "answer": 0,
+    "explanation": "280 KIAS / M0.76 balances margin to high-speed buffet and overspeed against margin to low-speed buffet. In severe turbulence the FCTM advises disengaging the autothrottle, holding attitude, and accepting altitude and speed excursions.",
+    "source": { "doc": "FCOM Vol 1 / FCTM", "ref": "SP.16 Severe Turbulence; FCTM 4 Cruise" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-max-alt",
+    "topic": "lim-ops",
+    "stem": "The maximum operating altitude of the 737-800 is:",
+    "options": ["37 000 ft", "39 000 ft", "41 000 ft", "43 100 ft"],
+    "answer": 2,
+    "explanation": "The maximum operating altitude is 41 000 ft pressure altitude. In practice, weight and buffet margin (the FMC MAX altitude) usually limit you lower.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Operating Limitations" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-flap-alt",
+    "topic": "lim-ops",
+    "stem": "The maximum altitude for flap extension is:",
+    "options": ["15 000 ft", "20 000 ft", "25 000 ft", "No limit within Vfe"],
+    "answer": 1,
+    "explanation": "Do not extend flaps above 20 000 ft. This matters in some non-normals and holding scenarios at high level.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Flaps" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-flap-30",
+    "topic": "lim-ops",
+    "stem": "Flap placard speed (Vfe) for flaps 30 on the 737-800 is:",
+    "options": ["162 KIAS", "175 KIAS", "190 KIAS", "200 KIAS"],
+    "answer": 1,
+    "explanation": "Typical 737-800 Vfe values: F1/2/5 250, F10 210, F15 200, F25 190, F30 175, F40 162 KIAS. These depend on airframe and options, so check the placard and your FCOM.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Flap Placard Speeds (verify against placard)" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "lim-gear-speeds",
+    "topic": "lim-ops",
+    "stem": "Landing gear operating speeds (VLO) for extension and retraction are:",
+    "options": [
+      "Extend 270 KIAS / M0.82, retract 235 KIAS",
+      "Extend 235 KIAS, retract 270 KIAS / M0.82",
+      "Extend and retract 270 KIAS",
+      "Extend 320 KIAS / M0.82, retract 235 KIAS"
+    ],
+    "answer": 0,
+    "explanation": "VLO extend 270 KIAS / M0.82 and VLO retract 235 KIAS. VLE (gear extended) is 320 KIAS / M0.82. Retraction speed is lower because the gear doors and actuators are loaded while the gear moves against the airflow.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Landing Gear" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "lim-tailwind",
+    "topic": "lim-ops",
+    "stem": "The basic maximum tailwind component for takeoff and landing (without specific approval) is:",
+    "options": ["5 kt", "10 kt", "15 kt", "20 kt"],
+    "answer": 1,
+    "explanation": "The basic limitation is 10 kt. Some operators hold approval for 15 kt with specific conditions; check your FCOM L section. Exam traps often use 15 kt.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Operating Limitations" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-pressure-diff",
+    "topic": "lim-sys",
+    "stem": "The maximum allowable cabin differential pressure for takeoff and landing is:",
+    "options": ["0.125 psi", "0.25 psi", "1.0 psi", "9.1 psi"],
+    "answer": 0,
+    "explanation": "0.125 psi for takeoff and landing. The relief valves limit the maximum differential to 9.1 psi. The small value at takeoff and landing ensures doors are not pressure-loaded if an evacuation is needed.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Air Systems" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "lim-egt-takeoff",
+    "topic": "lim-sys",
+    "stem": "The CFM56-7B EGT limit for takeoff is:",
+    "options": ["725°C", "895°C", "925°C", "950°C"],
+    "answer": 3,
+    "explanation": "Takeoff (5 minutes) 950°C, maximum continuous 925°C, start 725°C. The red line on the EGT gauge marks the 950°C takeoff limit.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Engines" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "lim-fuel-imbalance",
+    "topic": "lim-sys",
+    "stem": "The maximum random fuel imbalance between main tanks 1 and 2 for taxi, takeoff, flight or landing is:",
+    "options": ["453 kg (1 000 lb)", "227 kg (500 lb)", "680 kg (1 500 lb)", "907 kg (2 000 lb)"],
+    "answer": 0,
+    "explanation": "Lateral imbalance must be scheduled to zero, and random imbalance must not exceed 453 kg (1 000 lb). Before you balance with crossfeed, the QRH FUEL IMBALANCE checklist starts by ruling out an engine fuel leak, because crossfeeding into a leaking side throws fuel overboard.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Fuel" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "lim-fuel-temp",
+    "topic": "lim-sys",
+    "stem": "Fuel tank temperature limits are:",
+    "options": [
+      "Maximum 49°C; minimum 3°C above the fuel freezing point or -43°C, whichever is higher",
+      "Maximum 55°C; minimum -40°C",
+      "Maximum 49°C; minimum -47°C",
+      "Maximum 60°C; minimum at the freezing point"
+    ],
+    "answer": 0,
+    "explanation": "The 3°C margin above freezing protects against waxing at the fuel boost pump inlets. Worked example: Jet A-1 freezes at -47°C, so 3°C above is -44°C. The higher of -44°C and -43°C is -43°C, so -43°C governs. Fuel with a higher freezing point (e.g. Jet A at -40°C) gives -37°C. On long cold cruises, descend or speed up (increasing TAT) to manage fuel temperature.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Fuel" },
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "lim-wing-ai-ground",
+    "topic": "lim-sys",
+    "stem": "Wing anti-ice must not be used on the ground when OAT is above:",
+    "options": ["0°C", "5°C", "10°C", "15°C"],
+    "answer": 2,
+    "explanation": "Do not operate wing anti-ice on the ground when OAT is above 10°C, to avoid overheating the leading edge structure. Wing anti-ice is also not a ground de-icing tool: it is not a substitute for proper de-icing and anti-icing fluid treatment.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Anti-Ice" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "lim-ap-min-height",
+    "topic": "lim-sys",
+    "stem": "After takeoff, the autopilot must not be engaged below:",
+    "options": ["200 ft AGL", "400 ft AGL", "1 000 ft AGL", "1 500 ft AGL"],
+    "answer": 1,
+    "explanation": "The minimum AP engagement height after takeoff is 400 ft AGL. Operator SOPs often require hand flying to a higher altitude for proficiency. On approach, other single-channel limits apply depending on the approach type.",
+    "source": { "doc": "FCOM Vol 1", "ref": "L.10 Limitations - Autopilot/Autothrottle" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-runaway-first",
+    "topic": "qrh-memory",
+    "stem": "In the RUNAWAY STABILIZER memory items, the FIRST action is:",
+    "options": [
+      "Control column: hold firmly",
+      "STAB TRIM CUTOUT switches (both): CUTOUT",
+      "Autopilot (if engaged): disengage",
+      "Stabilizer trim wheel: grasp and hold"
+    ],
+    "answer": 0,
+    "explanation": "Fly the aircraft first. Holding the control column firmly stops the column cutout switches from interrupting your trim inputs and keeps attitude. Then disengage the autopilot and autothrottle. If the runaway continues: STAB TRIM CUTOUT switches both to CUTOUT. If it still continues: grasp and hold the trim wheel. Wording and sequence were revised after the 737 MAX accidents, so confirm against your current QRH revision.",
+    "source": { "doc": "QRH", "ref": "NNC 9 Flight Controls - Runaway Stabilizer (memory items)" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-cabin-alt-first",
+    "topic": "qrh-memory",
+    "stem": "The first memory item for CABIN ALTITUDE WARNING OR RAPID DEPRESSURIZATION is:",
+    "options": [
+      "Oxygen masks and regulators: ON, 100%",
+      "Pressurization mode selector: MAN",
+      "Passenger oxygen switch: ON",
+      "Initiate emergency descent"
+    ],
+    "answer": 0,
+    "explanation": "Protect the crew first. Time of useful consciousness at FL 370 is roughly 15 to 20 seconds after rapid decompression. Then establish crew communication, select pressurization MAN, and hold the outflow valve CLOSE until it is fully closed. If cabin altitude is not controllable, passenger oxygen goes ON and the emergency descent follows.",
+    "source": { "doc": "QRH", "ref": "NNC 2 Air Systems - Cabin Altitude Warning or Rapid Depressurization" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-ias-unreliable-pitch",
+    "topic": "qrh-memory",
+    "stem": "In the AIRSPEED UNRELIABLE memory items, the initial gear-up pitch attitude and thrust with flaps extended is:",
+    "options": ["10° and 80% N1", "15° and 85% N1", "4° and 75% N1", "10° and TO/GA thrust"],
+    "answer": 0,
+    "explanation": "Flaps extended: 10° and 80% N1. Flaps up: 4° and 75% N1. Before that, disengage the autopilot and autothrottle and set both F/D switches OFF. These values keep the aircraft in a safe envelope until you reach the QRH flight-with-unreliable-airspeed tables. Values differ between QRH revisions and variants.",
+    "source": { "doc": "QRH", "ref": "NNC 10 Flight Instruments - Airspeed Unreliable" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-eng-fire-discharge",
+    "topic": "qrh-memory",
+    "stem": "During ENGINE FIRE or ENGINE SEVERE DAMAGE OR SEPARATION, when is the engine fire switch rotated?",
+    "options": [
+      "If the engine fire switch or ENG OVERHEAT light stays illuminated after the switch is pulled",
+      "Immediately after it is pulled, in all cases",
+      "Only after 30 seconds have elapsed",
+      "Only on the ground"
+    ],
+    "answer": 0,
+    "explanation": "Memory sequence: A/T disengage, thrust lever confirm close, start lever confirm CUTOFF, fire switch confirm pull. If the fire switch or ENG OVERHEAT light stays illuminated, rotate to the stop and hold for 1 second. The reference items then call for the second bottle after 30 seconds if the warning persists. 'Confirm' means the other pilot verbally confirms before you act on that control.",
+    "source": { "doc": "QRH", "ref": "NNC 8 Fire Protection - Engine Fire or Engine Severe Damage or Separation" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-confirm-items",
+    "topic": "qrh-nnc",
+    "stem": "Per Boeing non-normal checklist philosophy, which controls require verbal confirmation by both pilots before being moved?",
+    "options": [
+      "Thrust lever (inoperative engine), engine start lever, engine/APU/cargo fire switch, generator drive disconnect switch, IRS mode selector (when one IRS is off)",
+      "All switches on the overhead panel",
+      "Only engine fire switches",
+      "Any control in a memory item"
+    ],
+    "answer": 0,
+    "explanation": "These are the irreversible or high-consequence controls. Moving the wrong one, such as shutting down the good engine (Kegworth, 1989), can be catastrophic. Check your FCTM / QRH CI section for the exact current list.",
+    "source": { "doc": "QRH / FCTM", "ref": "QRH CI Checklist Instructions; FCTM 8 Non-Normal Operations" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "qrh-nnc-timing",
+    "topic": "qrh-nnc",
+    "stem": "Per the FCTM, non-normal checklists are normally started (other than memory items):",
+    "options": [
+      "When the aircraft is under control, on a safe flight path, and at a safe altitude (normally at least 400 ft AGL)",
+      "Immediately when the failure is recognised, regardless of height",
+      "Only after reaching cruise altitude",
+      "After coordination with ATC and the cabin crew"
+    ],
+    "answer": 0,
+    "explanation": "Aviate, navigate, communicate. Except for memory items and a few time-critical actions, start NNCs only after the flight path is under control at a safe altitude. Rushing checklists low and slow increases the risk of mis-selecting controls.",
+    "source": { "doc": "FCTM", "ref": "8 Non-Normal Operations - Non-Normal Situation Guidelines" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "perf-v1-def",
+    "topic": "perf-to",
+    "stem": "V1 is best defined as:",
+    "options": [
+      "The maximum speed at which the crew can take the first action to stop within the accelerate-stop distance, and the minimum speed at which the takeoff can be continued after a critical engine failure at VEF",
+      "The speed at which the critical engine fails",
+      "The minimum control speed on the ground",
+      "The speed at which rotation begins"
+    ],
+    "answer": 0,
+    "explanation": "V1 is the decision speed. VEF (critical engine failure speed) is about 1 second before V1, to allow for recognition time. V1 must be at least VMCG and no more than VR. On the 737 the PF calls 'V1' about 5 kt before V1 so the decision happens at V1.",
+    "source": { "doc": "EASA CS-25 / ATPL 032", "ref": "CS 25.107; FCTM 3 Takeoff" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "perf-wet-screen",
+    "topic": "perf-to",
+    "stem": "For takeoff on a wet runway, the screen height used for the takeoff distance (engine failure case) is:",
+    "options": ["15 ft", "35 ft", "50 ft", "0 ft"],
+    "answer": 0,
+    "explanation": "On a dry runway the screen height is 35 ft. On a wet runway it reduces to 15 ft, which partly offsets the longer accelerate-stop on wet surfaces but leaves less obstacle margin at the runway end. Operators often reduce V1 on wet runways.",
+    "source": { "doc": "EASA CS-25 / ATPL 032", "ref": "CS 25.113 Takeoff distance and run" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "perf-2nd-segment",
+    "topic": "perf-to",
+    "stem": "For a twin-engined aeroplane, the minimum gross climb gradient in the second segment (one engine inoperative) is:",
+    "options": ["2.4%", "1.2%", "3.0%", "Positive"],
+    "answer": 0,
+    "explanation": "Twin-engine OEI gross gradients: 1st segment positive, 2nd segment 2.4%, final segment 1.2%. Net (for obstacle clearance) is gross minus 0.8% for twins. The second segment is usually the limiting one, which is why it drives climb-limited weight at hot and high aerodromes.",
+    "source": { "doc": "EASA CS-25 / ATPL 032", "ref": "CS 25.121 Climb: one-engine-inoperative" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "perf-tailstrike",
+    "topic": "perf-to",
+    "stem": "Per the FCTM, the normal rotation rate for the 737 is approximately:",
+    "options": ["2 to 3 degrees per second", "1 degree per second", "4 to 5 degrees per second", "As fast as possible to VR+10"],
+    "answer": 0,
+    "explanation": "Rotate smoothly at about 2 to 3°/s toward the initial target attitude of roughly 15°. Too fast is the main tailstrike cause, especially on the -800 and -900 whose long fuselage reduces clearance. Rotating early (before VR) also raises tailstrike risk.",
+    "source": { "doc": "FCTM", "ref": "3 Takeoff and Initial Climb - Rotation and Liftoff" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "perf-stabilized",
+    "topic": "perf-ldg",
+    "stem": "Per the Boeing FCTM, an approach should be stabilised by:",
+    "options": [
+      "1 000 ft AFE in IMC and 500 ft AFE in VMC",
+      "500 ft AFE in all conditions",
+      "1 500 ft AFE in IMC and 1 000 ft in VMC",
+      "The final approach fix"
+    ],
+    "answer": 0,
+    "explanation": "Recommended gates: 1 000 ft AFE in IMC, 500 ft AFE in VMC. Criteria include correct flight path, only small heading and pitch changes, speed between VREF and VREF+20, landing configuration, sink rate not greater than 1 000 fpm, and thrust stabilised. If not stabilised, go around. Operator gates may be stricter.",
+    "source": { "doc": "FCTM", "ref": "5 Approach and Missed Approach - Stabilized Approach Recommendations" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "perf-ldr-dry",
+    "topic": "perf-ldg",
+    "stem": "For dispatch, the required landing distance on a dry runway for a turbojet is the demonstrated landing distance divided by:",
+    "options": ["0.60", "0.70", "0.80", "1.15"],
+    "answer": 0,
+    "explanation": "Dispatch landing distance (dry) = actual landing distance / 0.6, which is a factor of about 1.67. Wet = dry required × 1.15. This is different from in-flight landing distance assessment, which uses operational (unfactored) data plus a margin, typically 15%.",
+    "source": { "doc": "EASA Air Ops / ATPL 032", "ref": "CAT.POL.A.230 / A.235" },
+    "difficulty": 2,
+    "status": "draft"
+  }
+]

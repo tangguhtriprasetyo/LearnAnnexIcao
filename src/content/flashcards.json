@@ -1,0 +1,116 @@
+[
+  { "id": "fc-vmo", "topic": "lim-ops", "kind": "limitation", "front": "Vmo / Mmo", "back": "340 KIAS / M0.82", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Operating Limitations" }, "status": "draft" },
+  { "id": "fc-turb", "topic": "lim-ops", "kind": "limitation", "front": "Turbulent air penetration speed", "back": "280 KIAS / M0.76", "source": { "doc": "FCOM Vol 1", "ref": "SP.16 Severe Turbulence" }, "status": "draft" },
+  { "id": "fc-max-alt", "topic": "lim-ops", "kind": "limitation", "front": "Maximum operating altitude", "back": "41 000 ft pressure altitude", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Operating Limitations" }, "status": "draft" },
+  { "id": "fc-flap-alt", "topic": "lim-ops", "kind": "limitation", "front": "Maximum altitude for flap extension", "back": "20 000 ft", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Flaps" }, "status": "draft" },
+  { "id": "fc-vfe", "topic": "lim-ops", "kind": "limitation", "front": "737-800 flap placard speeds (Vfe)", "back": "F1 250 · F2 250 · F5 250 · F10 210 · F15 200 · F25 190 · F30 175 · F40 162 KIAS (verify against placard)", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Flap Placard Speeds" }, "status": "draft" },
+  { "id": "fc-gear", "topic": "lim-ops", "kind": "limitation", "front": "Landing gear speeds VLO / VLE", "back": "VLO extend 270 KIAS / M0.82 · VLO retract 235 KIAS · VLE 320 KIAS / M0.82", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Landing Gear" }, "status": "draft" },
+  { "id": "fc-tailwind", "topic": "lim-ops", "kind": "limitation", "front": "Max tailwind component, takeoff and landing (basic)", "back": "10 kt (15 kt only with specific operator approval)", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Operating Limitations" }, "status": "draft" },
+  { "id": "fc-slope", "topic": "lim-ops", "kind": "limitation", "front": "Maximum runway slope", "back": "±2%", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Operating Limitations" }, "status": "draft" },
+  { "id": "fc-pdiff", "topic": "lim-sys", "kind": "limitation", "front": "Cabin differential pressure limits", "back": "Relief valves 9.1 psi max · takeoff and landing 0.125 psi max", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Air Systems" }, "status": "draft" },
+  { "id": "fc-egt", "topic": "lim-sys", "kind": "limitation", "front": "CFM56-7B EGT limits", "back": "Takeoff 950°C (5 min) · Max continuous 925°C · Start 725°C", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Engines" }, "status": "draft" },
+  { "id": "fc-apu-alt", "topic": "lim-sys", "kind": "limitation", "front": "APU altitude limits", "back": "Bleed + electrical 10 000 ft · bleed only 17 000 ft · electrical only 41 000 ft", "source": { "doc": "FCOM Vol 1", "ref": "L.10 APU" }, "status": "draft" },
+  { "id": "fc-fuel-temp", "topic": "lim-sys", "kind": "limitation", "front": "Fuel tank temperature limits", "back": "Max 49°C · Min: 3°C above freezing point or -43°C, whichever is higher", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Fuel" }, "status": "draft" },
+  { "id": "fc-fuel-imb", "topic": "lim-sys", "kind": "limitation", "front": "Main tank fuel imbalance limit", "back": "Random imbalance max 453 kg (1 000 lb) · scheduled imbalance zero", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Fuel" }, "status": "draft" },
+  { "id": "fc-ctr-tank", "topic": "lim-sys", "kind": "limitation", "front": "Centre tank fuel loading rule", "back": "Main tanks must be scheduled full if the centre tank contains more than 453 kg (1 000 lb)", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Fuel" }, "status": "draft" },
+  { "id": "fc-wai-ground", "topic": "lim-sys", "kind": "limitation", "front": "Wing anti-ice on the ground", "back": "Do not use when OAT is above 10°C", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Anti-Ice" }, "status": "draft" },
+  { "id": "fc-ap-400", "topic": "lim-sys", "kind": "limitation", "front": "Minimum autopilot engage height after takeoff", "back": "400 ft AGL", "source": { "doc": "FCOM Vol 1", "ref": "L.10 Autopilot/Autothrottle" }, "status": "draft" },
+  {
+    "id": "fc-mi-aborted-start", "topic": "qrh-memory", "kind": "memory-item", "front": "ABORTED ENGINE START",
+    "steps": [{ "item": "Engine start lever (affected engine)", "action": "CUTOFF" }],
+    "source": { "doc": "QRH", "ref": "NNC 7 Engines, APU" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-ias", "topic": "qrh-memory", "kind": "memory-item", "front": "AIRSPEED UNRELIABLE",
+    "steps": [
+      { "item": "Autopilot (if engaged)", "action": "Disengage" },
+      { "item": "Autothrottle (if engaged)", "action": "Disengage" },
+      { "item": "F/D switches (both)", "action": "OFF" },
+      { "item": "Set the following gear up pitch attitude and thrust:", "action": "" },
+      { "item": "Flaps extended", "action": "10° and 80% N1" },
+      { "item": "Flaps up", "action": "4° and 75% N1" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 10 Flight Instruments" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-apu-fire", "topic": "qrh-memory", "kind": "memory-item", "front": "APU FIRE",
+    "steps": [
+      { "item": "APU fire switch", "action": "Confirm, Pull, Rotate to the stop and hold for 1 second" },
+      { "item": "APU switch", "action": "OFF" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 8 Fire Protection" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-cabin-alt", "topic": "qrh-memory", "kind": "memory-item", "front": "CABIN ALTITUDE WARNING OR RAPID DEPRESSURIZATION",
+    "steps": [
+      { "item": "Oxygen masks and regulators", "action": "ON, 100%" },
+      { "item": "Crew communications", "action": "Establish" },
+      { "item": "Pressurization mode selector", "action": "MAN" },
+      { "item": "Outflow VALVE switch", "action": "Hold in CLOSE until the outflow VALVE indication shows fully closed" },
+      { "condition": "If the cabin altitude is uncontrollable:", "item": "Passenger signs", "action": "ON" },
+      { "item": "PASS OXYGEN switch", "action": "ON" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 2 Air Systems" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-eng-fire", "topic": "qrh-memory", "kind": "memory-item", "front": "ENGINE FIRE or ENGINE SEVERE DAMAGE OR SEPARATION",
+    "steps": [
+      { "item": "Autothrottle (if engaged)", "action": "Disengage" },
+      { "item": "Thrust lever (affected engine)", "action": "Confirm, Close" },
+      { "item": "Engine start lever (affected engine)", "action": "Confirm, CUTOFF" },
+      { "item": "Engine fire switch (affected engine)", "action": "Confirm, Pull" },
+      { "condition": "If the engine fire switch or ENG OVERHEAT light stays illuminated:", "item": "Engine fire switch (affected engine)", "action": "Rotate to the stop and hold for 1 second" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 8 Fire Protection" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-eng-limit", "topic": "qrh-memory", "kind": "memory-item", "front": "ENGINE LIMIT OR SURGE OR STALL",
+    "steps": [
+      { "item": "Autothrottle (if engaged)", "action": "Disengage" },
+      { "item": "Thrust lever (affected engine)", "action": "Confirm, Retard until engine indications stay within limits or the thrust lever is closed" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 7 Engines, APU" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-eng-overheat", "topic": "qrh-memory", "kind": "memory-item", "front": "ENGINE OVERHEAT",
+    "steps": [
+      { "item": "Autothrottle (if engaged)", "action": "Disengage" },
+      { "item": "Thrust lever (affected engine)", "action": "Confirm, Close" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 8 Fire Protection" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-dual-flameout", "topic": "qrh-memory", "kind": "memory-item", "front": "LOSS OF THRUST ON BOTH ENGINES",
+    "steps": [
+      { "item": "Engine start switches (both)", "action": "FLT" },
+      { "item": "Engine start levers (both)", "action": "CUTOFF" },
+      { "condition": "When EGT decreases:", "item": "Engine start levers (both)", "action": "IDLE detent" },
+      { "condition": "If EGT reaches 950°C or there is no increase in EGT within 30 seconds:", "item": "Engine start lever (affected engine)", "action": "CUTOFF, then IDLE detent" },
+      { "condition": "If EGT again reaches 950°C or no increase in EGT within 30 seconds, repeat as needed.", "item": "APU (if available)", "action": "START" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 7 Engines, APU" }, "status": "draft"
+  },
+  {
+    "id": "fc-mi-runaway-stab", "topic": "qrh-memory", "kind": "memory-item", "front": "RUNAWAY STABILIZER",
+    "steps": [
+      { "item": "Control column", "action": "Hold firmly" },
+      { "item": "Autopilot (if engaged)", "action": "Disengage" },
+      { "item": "Autothrottle (if engaged)", "action": "Disengage" },
+      { "condition": "If the runaway continues:", "item": "STAB TRIM CUTOUT switches (both)", "action": "CUTOUT" },
+      { "condition": "If the runaway continues:", "item": "Stabilizer trim wheel", "action": "Grasp and hold" }
+    ],
+    "source": { "doc": "QRH", "ref": "NNC 9 Flight Controls" }, "status": "draft"
+  },
+  { "id": "fc-al-squawks", "topic": "al-annex2", "kind": "fact", "front": "Emergency SSR codes", "back": "7500 unlawful interference · 7600 radio failure · 7700 emergency", "source": { "doc": "ICAO Doc 8168 Vol I", "ref": "Part III Sect 3 Ch 1" }, "status": "draft" },
+  { "id": "fc-al-vmc", "topic": "al-annex2", "kind": "fact", "front": "VMC minima, Class C-G (above 3 000 ft AMSL / 1 000 ft above terrain)", "back": "8 km at or above 10 000 ft AMSL, 5 km below · 1 500 m horizontal, 1 000 ft vertical from cloud. Class B: same visibility, clear of cloud.", "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, Table 3-1" }, "status": "draft" },
+  { "id": "fc-al-ifr-min", "topic": "al-annex2", "kind": "fact", "front": "IFR minimum level (no published MFA)", "back": "1 000 ft above highest obstacle within 8 km of estimated position · 2 000 ft over high terrain or mountainous areas", "source": { "doc": "ICAO Annex 2", "ref": "Ch 5, 5.1.2" }, "status": "draft" },
+  { "id": "fc-al-hold", "topic": "al-pans", "kind": "fact", "front": "PANS-OPS holding speeds (jets, normal)", "back": "≤14 000 ft 230 kt · >14 000-20 000 ft 240 kt · >20 000-34 000 ft 265 kt · >34 000 ft M0.83 · outbound 1 min ≤14 000 ft, 1.5 min above", "source": { "doc": "ICAO Doc 8168 Vol I", "ref": "Part II Sect 5 Ch 1 / Part III Sect 5 Ch 1" }, "status": "draft" },
+  { "id": "fc-al-wake", "topic": "al-pans", "kind": "fact", "front": "ICAO wake turbulence categories (MTOM)", "back": "L ≤7 000 kg · M >7 000 to <136 000 kg · H ≥136 000 kg · J (Super) A380", "source": { "doc": "ICAO Doc 4444", "ref": "Ch 4, 4.9.1" }, "status": "draft" },
+  { "id": "fc-al-phases", "topic": "al-annex11", "kind": "fact", "front": "Alerting service phases", "back": "INCERFA (uncertainty) → ALERFA (alert) → DETRESFA (distress). INCERFA trigger: no comms or not arrived within 30 min.", "source": { "doc": "ICAO Annex 11", "ref": "Ch 5" }, "status": "draft" },
+  { "id": "fc-al-medical", "topic": "al-annex1", "kind": "fact", "front": "Class 1 medical validity (Annex 1)", "back": "12 months · 6 months if over 40 in single-pilot CAT with passengers, or over 60 in CAT", "source": { "doc": "ICAO Annex 1", "ref": "Ch 1, 1.2.5.2" }, "status": "draft" },
+  { "id": "fc-al-age", "topic": "al-annex1", "kind": "fact", "front": "Pilot age limits, international CAT (Annex 1)", "back": "60-64: only in multi-pilot crew with the other pilot under 60 · not after 65th birthday", "source": { "doc": "ICAO Annex 1", "ref": "Ch 2, 2.1.10" }, "status": "draft" },
+  { "id": "fc-al-fuel", "topic": "al-annex6", "kind": "fact", "front": "Annex 6 final reserve fuel (turbine)", "back": "30 min at holding speed, 1 500 ft above aerodrome elevation, standard conditions", "source": { "doc": "ICAO Annex 6 Part I", "ref": "Ch 4, 4.3.6.3" }, "status": "draft" },
+  { "id": "fc-al-fatal", "topic": "al-annex13", "kind": "fact", "front": "Annex 13 injury definitions", "back": "Fatal: death within 30 days · Serious: e.g. hospitalised over 48 h, starting within 7 days of injury", "source": { "doc": "ICAO Annex 13", "ref": "Ch 1 Definitions" }, "status": "draft" },
+  { "id": "fc-al-annexes", "topic": "al-convention", "kind": "fact", "front": "ICAO Annexes 1-19", "back": "1 Licensing · 2 Rules of the Air · 3 Met · 4 Charts · 5 Units · 6 Operations · 7 Registration · 8 Airworthiness · 9 Facilitation · 10 Telecoms · 11 ATS · 12 SAR · 13 Accident Investigation · 14 Aerodromes · 15 AIS · 16 Environment · 17 Security · 18 Dangerous Goods · 19 Safety Management", "source": { "doc": "ICAO", "ref": "Annexes to the Chicago Convention" }, "status": "draft" },
+  { "id": "fc-al-ground-air", "topic": "al-annex12", "kind": "fact", "front": "Ground-to-air signals V, X, N, Y, arrow", "back": "V assistance · X medical assistance · N no · Y yes · arrow proceeding this direction", "source": { "doc": "ICAO Annex 12", "ref": "Appendix" }, "status": "draft" }
+]

@@ -1,0 +1,428 @@
+[
+  {
+    "id": "al-conv-freedoms-5",
+    "topic": "al-convention",
+    "stem": "An Indonesian carrier flies Jakarta to Singapore, then picks up passengers in Singapore and carries them on to Tokyo. Which freedom of the air covers the Singapore to Tokyo traffic?",
+    "options": ["Third freedom", "Fourth freedom", "Fifth freedom", "Seventh freedom"],
+    "answer": 2,
+    "explanation": "The fifth freedom is carrying traffic between two foreign states on a service that starts or ends in the carrier's home state. The 3rd and 4th freedoms only cover traffic to or from the home state. The 7th freedom is a service between two foreign states with no link to the home state at all.",
+    "source": { "doc": "ICAO Doc 9626 (Manual on the Regulation of Intl Air Transport)", "ref": "Ch 4.1 Freedoms of the air" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-conv-freedoms-12",
+    "topic": "al-convention",
+    "stem": "The International Air Services Transit Agreement (the 'Two Freedoms Agreement') exchanges which rights?",
+    "options": [
+      "Overflight, and landing for non-traffic purposes",
+      "Overflight, and carrying traffic from the home state",
+      "Landing for non-traffic purposes, and cabotage",
+      "Carrying traffic to and from the home state"
+    ],
+    "answer": 0,
+    "explanation": "The Transit Agreement (Chicago, 1944) exchanges the 1st freedom (fly across without landing) and the 2nd freedom (land for non-traffic purposes such as refuelling or maintenance). Traffic rights (3rd to 5th freedoms) were in the separate Transport Agreement, which few states ratified, so they are normally granted through bilateral air services agreements.",
+    "source": { "doc": "ICAO Doc 9587 / Transit Agreement", "ref": "Article I Section 1" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-conv-art1",
+    "topic": "al-convention",
+    "stem": "Under the Chicago Convention, every state has complete and exclusive sovereignty over:",
+    "options": [
+      "The airspace above its territory, including territorial waters",
+      "The airspace above its land territory only",
+      "Its Flight Information Region, including high seas portions",
+      "The airspace above its territory up to FL 660"
+    ],
+    "answer": 0,
+    "explanation": "Article 1 gives complete and exclusive sovereignty over the airspace above a state's territory. Article 2 defines territory as land areas plus the adjacent territorial waters. A FIR is a service boundary, not a sovereignty boundary: FIRs over the high seas are delegated by ICAO regional agreement and confer no sovereignty.",
+    "source": { "doc": "Chicago Convention (Doc 7300)", "ref": "Articles 1 and 2" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-conv-cabotage",
+    "topic": "al-convention",
+    "stem": "Which Chicago Convention article allows each state to refuse permission to foreign aircraft to carry passengers between two points within its own territory (cabotage)?",
+    "options": ["Article 5", "Article 6", "Article 7", "Article 12"],
+    "answer": 2,
+    "explanation": "Article 7 covers cabotage. Article 5 covers non-scheduled flights, Article 6 says scheduled services need special permission, and Article 12 requires states to keep their rules of the air consistent with ICAO standards (over the high seas, the Annex 2 rules apply without exception).",
+    "source": { "doc": "Chicago Convention (Doc 7300)", "ref": "Articles 5, 6, 7, 12" },
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "al-a1-medical-validity",
+    "topic": "al-annex1",
+    "stem": "A 45-year-old first officer flies multi-crew commercial air transport. Per ICAO Annex 1, what is the maximum validity of their Class 1 medical assessment?",
+    "options": ["6 months", "12 months", "24 months", "60 months"],
+    "answer": 1,
+    "explanation": "The Annex 1 Class 1 validity is 12 months. It drops to 6 months for two groups: pilots over 40 in single-pilot commercial air transport carrying passengers, and pilots over 60 in commercial air transport. A 45-year-old in multi-crew operations is in neither group, so 12 months applies. National rules may be stricter.",
+    "source": { "doc": "ICAO Annex 1", "ref": "Ch 1, 1.2.5.2 Validity of medical assessments" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a1-age-60",
+    "topic": "al-annex1",
+    "stem": "Under ICAO Annex 1, a pilot aged 62 may act as pilot-in-command of an international commercial air transport flight only if:",
+    "options": [
+      "They hold a Class 1 medical renewed every 6 months, in single-pilot operations",
+      "They are a member of a multi-pilot crew and the other pilot is younger than 60",
+      "The State of Registry grants a specific exemption",
+      "They cannot; the limit is 60 years for PIC"
+    ],
+    "answer": 1,
+    "explanation": "Annex 1 lets a pilot aged 60 to 64 act as pilot in international commercial air transport only in a multi-pilot crew where the other pilot is under 60. The absolute limit is the 65th birthday.",
+    "source": { "doc": "ICAO Annex 1", "ref": "Ch 2, 2.1.10 Limitation of privileges of pilots who have attained their 60th birthday" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a1-atpl-hours",
+    "topic": "al-annex1",
+    "stem": "The ICAO Annex 1 minimum total flight time for issue of an ATPL (aeroplane) is:",
+    "options": ["1 000 hours", "1 500 hours", "2 000 hours", "250 hours as PIC"],
+    "answer": 1,
+    "explanation": "The minimum is 1 500 hours total. It must include specified amounts of PIC (or PIC under supervision), cross-country, instrument and night time. Some states add more on top, for example the US 1 500-hour rule with its specific credit restrictions.",
+    "source": { "doc": "ICAO Annex 1", "ref": "Ch 2, 2.6.3 Experience (ATPL aeroplane)" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-rightofway-converging",
+    "topic": "al-annex2",
+    "stem": "Two power-driven aeroplanes are converging at approximately the same level. Which one gives way?",
+    "options": [
+      "The one that has the other on its right",
+      "The one that has the other on its left",
+      "The faster aircraft",
+      "The aircraft at the lower altitude"
+    ],
+    "answer": 0,
+    "explanation": "When converging at about the same level, the aircraft that has the other on its right gives way. The giving-way aircraft should avoid passing over, under or ahead of the other unless well clear, and must account for wake turbulence.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, 3.2.2.3 Converging" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-rightofway-categories",
+    "topic": "al-annex2",
+    "stem": "A power-driven heavier-than-air aircraft is converging with a glider. Who gives way?",
+    "options": [
+      "The glider, because it is less manoeuvrable",
+      "The power-driven aircraft",
+      "The aircraft on the left",
+      "Neither; both turn right"
+    ],
+    "answer": 1,
+    "explanation": "Annex 2 ranks categories by how manoeuvrable they are. Power-driven heavier-than-air aircraft give way to airships, gliders and balloons. Airships give way to gliders and balloons, and gliders give way to balloons. Power-driven aircraft also give way to aircraft seen towing other aircraft or objects.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, 3.2.2.3 Converging" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-overtaking",
+    "topic": "al-annex2",
+    "stem": "An aircraft is overtaking another in flight. Which statement is correct?",
+    "options": [
+      "The overtaking aircraft keeps out of the way by altering heading to the right",
+      "The aircraft being overtaken alters heading to the left",
+      "The overtaking aircraft alters heading to the left",
+      "Both aircraft alter heading to the right"
+    ],
+    "answer": 0,
+    "explanation": "The aircraft being overtaken has the right of way. The overtaking aircraft, whether climbing, descending or level, keeps clear by altering heading to the right. It stays responsible until it is entirely past and clear, even if the relative positions change.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, 3.2.2.4 Overtaking" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-landing-priority",
+    "topic": "al-annex2",
+    "stem": "Two aeroplanes are approaching the same aerodrome to land. Which has the right of way?",
+    "options": [
+      "The aircraft at the lower level, provided it does not cut in front of or overtake one in the final approach",
+      "The aircraft at the higher level, because it has more energy to manage",
+      "The heavier aircraft",
+      "The aircraft first to call ATC"
+    ],
+    "answer": 0,
+    "explanation": "Aircraft in flight or on the ground or water give way to aircraft landing or in the final stages of an approach. Between two heavier-than-air aircraft approaching to land, the one at the higher level gives way to the lower one. The lower aircraft must not use this rule to cut in front of, or overtake, one already in the final stages of an approach.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, 3.2.2.5 Landing" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-vmc-class-c",
+    "topic": "al-annex2",
+    "stem": "In ICAO Class C airspace below 10 000 ft AMSL, the VMC minima are:",
+    "options": [
+      "5 km flight visibility, 1 500 m horizontally and 1 000 ft vertically from cloud",
+      "8 km flight visibility, clear of cloud",
+      "5 km flight visibility, clear of cloud and in sight of the surface",
+      "1 500 m flight visibility, 1 500 m horizontally and 1 000 ft vertically from cloud"
+    ],
+    "answer": 0,
+    "explanation": "Annex 2 Table 3-1 sets 1 500 m horizontal and 1 000 ft vertical distance from cloud in Classes C to G above the low-level threshold. Visibility is 8 km at and above 10 000 ft AMSL and 5 km below. Class B differs: same visibility, but only 'clear of cloud'.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 3, Table 3-1 VMC visibility and distance from cloud minima" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-ifr-min-height",
+    "topic": "al-annex2",
+    "stem": "Except for takeoff and landing, or when authorised, an IFR flight over high terrain or mountainous areas shall be flown at a level at least:",
+    "options": [
+      "600 m (2 000 ft) above the highest obstacle within 8 km of the estimated position",
+      "300 m (1 000 ft) above the highest obstacle within 8 km of the estimated position",
+      "600 m (2 000 ft) above the highest obstacle within 5 NM of track",
+      "450 m (1 500 ft) above the highest obstacle within 8 km of the estimated position"
+    ],
+    "answer": 0,
+    "explanation": "The IFR minimum level is 300 m (1 000 ft) above the highest obstacle within 8 km of the estimated position. Over high terrain or mountainous areas this rises to 600 m (2 000 ft). These apply where the appropriate authority has not set a minimum flight altitude.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Ch 5, 5.1.2 Minimum levels" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-squawk-7600",
+    "topic": "al-annex2",
+    "stem": "Which SSR code indicates radio communication failure?",
+    "options": ["7500", "7600", "7700", "2000"],
+    "answer": 1,
+    "explanation": "7600 means communication failure, 7500 means unlawful interference, and 7700 means emergency. 2000 is commonly used when no code has been assigned, for example when entering SSR airspace from a non-SSR area.",
+    "source": { "doc": "ICAO Doc 8168 Vol I", "ref": "Part III, Section 3, Ch 1 Operation of transponders" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a2-intercept-follow",
+    "topic": "al-annex2",
+    "stem": "By day, an intercepting aircraft rocks its wings from a position slightly above and ahead of you, normally to your left, then makes a slow level turn. This means:",
+    "options": [
+      "You have been intercepted. Follow me.",
+      "You may proceed.",
+      "Land at this aerodrome.",
+      "Descend immediately."
+    ],
+    "answer": 0,
+    "explanation": "This is interception signal series 1: 'You have been intercepted. Follow me.' The intercepted aircraft replies by rocking its wings, flashing navigation lights at irregular intervals (at night), and following. It should also try to call the interceptor on 121.5 MHz and squawk 7700 unless ATC instructs otherwise.",
+    "source": { "doc": "ICAO Annex 2", "ref": "Appendix 2, Interception signals, Series 1" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a6-final-reserve",
+    "topic": "al-annex6",
+    "stem": "Per ICAO Annex 6 Part I, final reserve fuel for a turbine-engined aeroplane is the amount required to fly for:",
+    "options": [
+      "30 minutes at holding speed at 450 m (1 500 ft) above aerodrome elevation in standard conditions",
+      "45 minutes at holding speed at 450 m (1 500 ft) above aerodrome elevation",
+      "30 minutes at long range cruise at 3 000 ft",
+      "10% of trip time"
+    ],
+    "answer": 0,
+    "explanation": "For turbine aeroplanes, final reserve is 30 minutes at holding speed, 450 m (1 500 ft) above the alternate or destination aerodrome elevation in standard conditions. The 45-minute figure is for reciprocating-engine aeroplanes. Final reserve is protected: if you predict landing with less than it, you declare MAYDAY FUEL.",
+    "source": { "doc": "ICAO Annex 6 Part I", "ref": "Ch 4, 4.3.6.3 (e) Final reserve fuel" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a6-minimum-fuel",
+    "topic": "al-annex6",
+    "stem": "The PIC calculates that any change to the existing clearance would result in landing with less than planned final reserve fuel. Per Annex 6, the PIC should:",
+    "options": [
+      "Advise ATC of a MINIMUM FUEL state",
+      "Declare MAYDAY FUEL",
+      "Declare PAN PAN",
+      "Divert immediately without informing ATC"
+    ],
+    "answer": 0,
+    "explanation": "MINIMUM FUEL means you are committed to a specific aerodrome and any change could put you below final reserve. It is not an emergency and gives no priority. MAYDAY MAYDAY MAYDAY FUEL is declared when the calculated usable fuel on landing at the nearest suitable aerodrome is less than final reserve.",
+    "source": { "doc": "ICAO Annex 6 Part I", "ref": "Ch 4, 4.3.7 In-flight fuel management" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a6-contingency",
+    "topic": "al-annex6",
+    "stem": "Under Annex 6, contingency fuel should normally be the higher of 5% of planned trip fuel and:",
+    "options": [
+      "Fuel for 5 minutes at holding speed at 450 m (1 500 ft) above destination",
+      "Fuel for 10 minutes at holding speed at destination",
+      "Fuel for 15 minutes at cruise altitude",
+      "300 kg"
+    ],
+    "answer": 0,
+    "explanation": "Contingency fuel covers unforeseen factors such as wind, ATC routing and deviations from planned weight. The Annex 6 baseline is 5% of trip fuel, but never less than 5 minutes holding at 450 m above destination. Operators may use a lower percentage with an approved fuel-planning method.",
+    "source": { "doc": "ICAO Annex 6 Part I", "ref": "Ch 4, 4.3.6.3 (c) Contingency fuel" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a7-marks-wings",
+    "topic": "al-annex7-8",
+    "stem": "On the wings of a heavier-than-air aircraft, nationality and registration marks shall be at least:",
+    "options": ["30 cm high", "50 cm high", "75 cm high", "1 m high"],
+    "answer": 1,
+    "explanation": "Marks on the wings must be at least 50 cm high. Marks on the fuselage or vertical tail must be at least 30 cm high. For Indonesian-registered aircraft the nationality mark is PK.",
+    "source": { "doc": "ICAO Annex 7", "ref": "Ch 4, Measurement of nationality and registration marks" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a8-coa",
+    "topic": "al-annex7-8",
+    "stem": "Which state issues or validates the Certificate of Airworthiness for an aircraft?",
+    "options": ["State of the Operator", "State of Registry", "State of Design", "State of Manufacture"],
+    "answer": 1,
+    "explanation": "The State of Registry issues or validates the Certificate of Airworthiness (Chicago Convention Art 31; Annex 8). The State of Design holds the type certificate and issues continuing airworthiness information such as ADs, which the State of Registry adopts.",
+    "source": { "doc": "ICAO Annex 8", "ref": "Part II, Ch 3 Certificate of airworthiness" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a11-class-e",
+    "topic": "al-annex11",
+    "stem": "In ICAO Class E airspace, which statement is correct?",
+    "options": [
+      "IFR flights are separated from IFR flights; VFR flights do not need an ATC clearance",
+      "IFR and VFR flights are separated from all other flights",
+      "Only IFR flights are permitted",
+      "VFR flights require a clearance and are separated from IFR"
+    ],
+    "answer": 0,
+    "explanation": "Class E: IFR and VFR both permitted. IFR flights get ATC service and are separated from other IFR flights, and receive traffic information on VFR flights as far as practical. VFR flights need no clearance and receive no separation. Class D also separates only IFR from IFR, but there VFR flights need a clearance.",
+    "source": { "doc": "ICAO Annex 11", "ref": "Ch 2, 2.6 Classification of airspaces; Appendix 4" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a11-incerfa",
+    "topic": "al-annex11",
+    "stem": "An aircraft has not arrived within 30 minutes of its last estimated time of arrival, and no communication has been received. Which emergency phase is declared?",
+    "options": ["INCERFA (uncertainty)", "ALERFA (alert)", "DETRESFA (distress)", "No phase; wait 60 minutes"],
+    "answer": 0,
+    "explanation": "INCERFA: no communication within 30 minutes of when it should have been received, or the aircraft fails to arrive within 30 minutes of its ETA. ALERFA follows when enquiries fail, when an aircraft cleared to land does not land within 5 minutes and contact is lost, or when operating efficiency is known to be impaired. DETRESFA: further enquiries fail, fuel is considered exhausted, or a forced landing is likely or has occurred.",
+    "source": { "doc": "ICAO Annex 11", "ref": "Ch 5, 5.2 Notification of rescue coordination centres" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a11-fis",
+    "topic": "al-annex11",
+    "stem": "Which three services make up 'air traffic services' as defined by Annex 11?",
+    "options": [
+      "Air traffic control service, flight information service, alerting service",
+      "Area control, approach control, aerodrome control",
+      "ATC service, AIS, search and rescue",
+      "Flight information service, ATIS, VOLMET"
+    ],
+    "answer": 0,
+    "explanation": "Annex 11 defines ATS as ATC service (area, approach and aerodrome control), flight information service, and alerting service. AIS is covered by Annex 15 and search and rescue by Annex 12. ATIS and VOLMET are ways of delivering FIS.",
+    "source": { "doc": "ICAO Annex 11", "ref": "Ch 2, 2.3 Divisions of the air traffic services" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a12-ground-air-v",
+    "topic": "al-annex12",
+    "stem": "Survivors lay out the ground-to-air visual signal 'V'. Its meaning is:",
+    "options": ["Require assistance", "Require medical assistance", "No / negative", "Proceeding in this direction"],
+    "answer": 0,
+    "explanation": "V = require assistance, X = require medical assistance, N = no or negative, Y = yes or affirmative, and an arrow means proceeding in this direction. An aircraft acknowledges by day by rocking its wings, and at night by flashing landing lights or navigation lights on and off twice.",
+    "source": { "doc": "ICAO Annex 12", "ref": "Appendix, Search and rescue signals" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a13-accident-def",
+    "topic": "al-annex13",
+    "stem": "For Annex 13 statistical purposes, an injury resulting in death within how many days of an accident is classified as a fatal injury?",
+    "options": ["7 days", "14 days", "30 days", "90 days"],
+    "answer": 2,
+    "explanation": "A fatal injury is one resulting in death within 30 days of the accident. A serious injury includes, among other things, hospitalisation for more than 48 hours starting within 7 days of the injury.",
+    "source": { "doc": "ICAO Annex 13", "ref": "Ch 1 Definitions (Accident, Note 1; Serious injury)" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-a13-who-investigates",
+    "topic": "al-annex13",
+    "stem": "An Indonesian-registered 737-800 has an accident in Malaysian territory. Which state institutes and conducts the investigation?",
+    "options": [
+      "Malaysia, as the State of Occurrence",
+      "Indonesia, as the State of Registry",
+      "The USA, as the State of Design and Manufacture",
+      "ICAO"
+    ],
+    "answer": 0,
+    "explanation": "The State of Occurrence institutes the investigation and may delegate all or part of it. The State of Registry, State of the Operator, State of Design and State of Manufacture are each entitled to appoint an accredited representative. If the occurrence is outside any state's territory, the State of Registry investigates.",
+    "source": { "doc": "ICAO Annex 13", "ref": "Ch 5, 5.1 Responsibility for instituting and conducting the investigation" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a13-objective",
+    "topic": "al-annex13",
+    "stem": "According to Annex 13, the sole objective of an accident or incident investigation is:",
+    "options": [
+      "The prevention of accidents and incidents",
+      "To determine blame and liability",
+      "To support insurance claims",
+      "To determine whether licences should be suspended"
+    ],
+    "answer": 0,
+    "explanation": "Annex 13 states the sole objective is prevention, not apportioning blame or liability. This is why safety recommendations matter and why there are protections against using records such as CVR content for non-safety purposes.",
+    "source": { "doc": "ICAO Annex 13", "ref": "Ch 3, 3.1 Objective of the investigation" },
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "al-a14-ref-code",
+    "topic": "al-annex14",
+    "stem": "A 737-800 with winglets has a wingspan of about 35.8 m. What is its aerodrome reference code letter?",
+    "options": ["B", "C", "D", "E"],
+    "answer": 1,
+    "explanation": "The code letter comes from wingspan. Code C covers 24 m up to but not including 36 m, so the 737-800 is a Code C aeroplane. Code D starts at 36 m (e.g. B767). The code number (1 to 4) comes from the aeroplane reference field length, and the 737-800 is Code 4 (1 800 m or more).",
+    "source": { "doc": "ICAO Annex 14 Vol I", "ref": "Ch 1, 1.6 Aerodrome reference code, Table 1-1" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-pans-hold-speed",
+    "topic": "al-pans",
+    "stem": "Per PANS-OPS, the maximum holding speed for a jet aeroplane at FL 180 in normal conditions is:",
+    "options": ["230 KIAS", "240 KIAS", "265 KIAS", "Mach 0.83"],
+    "answer": 1,
+    "explanation": "PANS-OPS holding speeds: up to 14 000 ft, 230 kt; above 14 000 to 20 000 ft, 240 kt; above 20 000 to 34 000 ft, 265 kt; above 34 000 ft, M0.83. Turbulence speeds are higher. Some states publish their own figures, so check the state AIP.",
+    "source": { "doc": "ICAO Doc 8168 Vol I", "ref": "Part II, Section 5, Ch 1 Holding criteria, Table II-5-1-1 (verify table ref)" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-pans-hold-timing",
+    "topic": "al-pans",
+    "stem": "In a standard holding pattern at FL 150 with no published outbound time, the outbound leg time is:",
+    "options": ["1 minute", "1.5 minutes", "2 minutes", "Distance-based only"],
+    "answer": 1,
+    "explanation": "Outbound time is 1 minute at or below 14 000 ft and 1.5 minutes above 14 000 ft. A standard pattern uses right turns. The outbound timing starts abeam the fix, or when wings are level outbound if the abeam position cannot be determined.",
+    "source": { "doc": "ICAO Doc 8168 Vol I", "ref": "Part III, Section 5, Ch 1 Holding procedures" },
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "al-pans-wake-cat",
+    "topic": "al-pans",
+    "stem": "Under the traditional ICAO PANS-ATM categories, a 737-800 (MTOM about 79 000 kg) is in which wake turbulence category?",
+    "options": ["Light", "Medium", "Heavy", "Super"],
+    "answer": 1,
+    "explanation": "Light is 7 000 kg or less, Medium is more than 7 000 kg but less than 136 000 kg, and Heavy is 136 000 kg or more. Super (J) is the A380. Many states now apply RECAT-EU or RECAT categories, where the 737-800 sits in 'Lower Medium' (RECAT-EU CAT D). Know which scheme your operator's state uses.",
+    "source": { "doc": "ICAO Doc 4444", "ref": "Ch 4, 4.9.1 Wake turbulence categories" },
+    "difficulty": 1,
+    "status": "draft"
+  }
+]
